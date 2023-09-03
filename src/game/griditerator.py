@@ -18,9 +18,11 @@ class GridIterator:
         self.iter_count: int = 0
 
     def set_random_state(self):
+        sequence = [0, 1]
+        weights = [1, 4]
         for column in self.current_state:
             for cell in column:
-                cell.state = random.randint(0, 1)
+                cell.state = random.choices(sequence, weights=weights, k=1)[0]
 
     def _create_grid(self):
         return Matrix(self.width, self.height, Cell).matrix
