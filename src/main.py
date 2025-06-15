@@ -1,4 +1,10 @@
+import os
+import sys
+sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
+
 import pygame as p
+from line_profiler import profile
+
 from src.game.griditerator import GridIterator
 from src.game.ruleset import Ruleset
 from src.game.settings import WIDTH, HEIGHT, CELL_SIZE, FONT_SIZE, BORDER_WIDTH
@@ -18,6 +24,7 @@ class App:
                 cell.draw_square(self.screen, border_width=BORDER_WIDTH)
         p.display.flip()
 
+    @profile
     def run(self):
         rules = Ruleset(rule_name='conway', alive_state=0, dead_state=1)
         grid = GridIterator(WIDTH, HEIGHT, rules)

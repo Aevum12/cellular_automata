@@ -1,11 +1,8 @@
-# from src.game import Cell, Matrix, Ruleset
-from src.game.matrix import Matrix
 from src.game.cell import Cell
-# from src.game.ruleset import Ruleset
-# from src.game.matrix import Matrix
+from src.game.matrix import Matrix
+from src.game.ruleset import Ruleset
 import random
 
-from src.game.ruleset import Ruleset
 
 
 class GridIterator:
